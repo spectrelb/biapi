@@ -243,7 +243,10 @@ func (client *Client) GetV5MarketHistoryCandles(options *map[string]string) (*Ge
 		params["instId"] = (*options)["instId"]
 		params["limit"] = (*options)["limit"]
 		params["bar"] = (*options)["bar"]
-		params["after"] = (*options)["after"]
+
+		if (*options)["after"] != "" {
+			params["after"] = (*options)["after"]
+		}
 		uri =  okex.BuildParams(uri, params)
 	}
 
