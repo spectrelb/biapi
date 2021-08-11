@@ -22,7 +22,7 @@ var (
 		Timeout: time.Duration(5) * time.Second,
 	}
 
-	okApi = NewCustomAPIBuilder(aa).APIKey("65e313c0-ac97-4dcb-ae50-604066a74a2f").APISecretkey("8119AED4612C20841D10B54616E19EBB").ApiPassphrase("19930522Lb").Build(HUOBI)
+	okApi = NewCustomAPIBuilder(aa).APIKey("xxxxx").APISecretkey("xxxx").ApiPassphrase("xxxx").Build(HUOBI)
 )
 
 func TestAPIBuilder_Build(t *testing.T) {
@@ -30,7 +30,7 @@ func TestAPIBuilder_Build(t *testing.T) {
 }
 
 func TestAPIGetMarketHistoryKlineBuilder_Build(t *testing.T) {
-	resp, _ := okApi.GetMarketHistoryKline("ETH-USDT", biapi.KLINE_PERIOD_4H)
+	resp, _ := okApi.GetMarketHistoryKline("ETH-USDT", biapi.KLINE_PERIOD_4H, 200)
 	fmt.Println(resp)
 }
 
