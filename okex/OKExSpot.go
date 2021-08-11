@@ -4,6 +4,7 @@ import (
 	"github.com/okex/V3-Open-API-SDK/okex-go-sdk-api"
 	. "github.com/spectrelb/biapi"
 	"math"
+	"time"
 )
 
 const defaultLimit = 100
@@ -50,6 +51,7 @@ func (ok *OKExSpot) GetMarketHistoryKline(symbol string, period KlinePeriod, lim
 			}
 			data = append(data, kline)
 		}
+		time.Sleep(time.Second / 5)
 	}
 
 	return data, nil
