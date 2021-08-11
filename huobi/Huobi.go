@@ -23,7 +23,7 @@ func (ok Huobi) GetExchangeName() (string) {
 	return "huobi.com"
 }
 
-func (ok Huobi) GetMarketHistoryKline(symbol string, period KlinePeriod) ([]MarketKlineResp, error) {
+func (ok Huobi) GetMarketHistoryKline(symbol string, period KlinePeriod, limit int) ([]MarketKlineResp, error) {
 	client := new(client.MarketClient).Init(config.Host)
 
 	optionalRequest := market.GetCandlestickOptionalRequest{Period: HuobiKlinePeriodConverter[period], Size: 200}

@@ -19,8 +19,8 @@ func (ok OKEx) GetExchangeName() (string) {
 	return "okex.com"
 }
 
-func (ok OKEx) GetMarketHistoryKline(symbol string, period KlinePeriod) ([]MarketKlineResp, error) {
-	return ok.OKExSpot.GetMarketHistoryKline(symbol,period)
+func (ok OKEx) GetMarketHistoryKline(symbol string, period KlinePeriod, limit int) ([]MarketKlineResp, error) {
+	return ok.OKExSpot.GetMarketHistoryKline(symbol,period, limit)
 }
 
 func (ok OKEx) GetAllSymbol() ([]string, error) {

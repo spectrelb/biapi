@@ -3,7 +3,7 @@ package biapi
 type API interface {
 	GetAccount(name string) (string, error)
 	GetExchangeName() string
-	GetMarketHistoryKline(symbol string, period KlinePeriod) ([]MarketKlineResp, error)
+	GetMarketHistoryKline(symbol string, period KlinePeriod, limit int) ([]MarketKlineResp, error)
 	GetAllSymbol() ([]string, error)
 	//Say(name string) string
 	//LimitBuy(amount, price string, currency CurrencyPair, opt ...LimitOrderOptionalParameter) (*Order, error)
