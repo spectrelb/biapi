@@ -27,7 +27,6 @@ func (ok *OKExSpot) GetMarketHistoryKline(symbol string, period KlinePeriod, lim
 		optionals := okex.NewParams()
 		optionals["instId"] = symbol
 		optionals["bar"] = OkexKlinePeriodConverter[period]
-		optionals["limit"] = string(defaultLimit)
 		optionals["after"] = after
 		result, err := ok.Client.GetV5MarketCandles(&optionals)
 		if err !=nil {
