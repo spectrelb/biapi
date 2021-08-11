@@ -51,7 +51,7 @@ func (ok *OKExSpot) GetMarketHistoryKline(symbol string, period KlinePeriod, lim
 			}
 			data = append(data, kline)
 		}
-		time.Sleep(time.Second / 5)
+		time.Sleep(time.Second)
 	}
 
 	return data, nil
